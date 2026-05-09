@@ -90,24 +90,13 @@ SUNBIRD_API_TOKEN= YOUR_SUNBIRD_AI_API_TOKEN
 ```
 
 > **Get a token:** Sign up at [Sunbird AI API Portal](https://api.sunbird.ai/).
-> **Never commit your token to git.** `.env` is already in `.gitignore` by convention.
+> **Never commit your token to git.**
 
 ### 5. Run the app locally
 
 ```bash
 python app.py
 ```
-
-The app will be available at `http://localhost:7860`.
-
-### 6. Run tests
-
-```bash
-python -m pytest
-```
-
----
-
 ## Environment Variables
 
 | Variable | Required | Description |
@@ -140,8 +129,6 @@ python -m pytest
    - **Summary** — the AI-generated summary.
    - **Translated summary** — the translated summary.
    - **Synthesised speech** — playable audio in the target language.
-
-> **Tip:** The UI is styled with an editorial off-white canvas, soft pastel gradient orbs in the hero band, and pill-shaped buttons to match the design system.
 
 ---
 
@@ -202,7 +189,3 @@ Hugging Face will build and deploy automatically.
 5. **STT language detection:** The STT endpoint auto-detects language in the audio. The transcript may occasionally be returned in a language different from the user's expectation if the audio quality is poor.
 
 ---
-
-## License
-
-This is a demonstration project built for the Sunbird AI Internship Assessment.
