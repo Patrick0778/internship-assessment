@@ -1,15 +1,3 @@
----
-title: Sunbird AI GenApp
-emoji: 🌻
-colorFrom: pink
-colorTo: indigo
-sdk: gradio
-app_file: app.py
-pinned: false
-license: unknown
-short_description: Summarise and translate text/audio into Ugandan languages
----
-
 # Sunbird AI GenApp
 
 A minimal, editorial-style Generative AI web application that lets users provide **text** or an **audio file**, summarises the content, translates the summary into a chosen Ugandan local language, and synthesises the translated summary into natural-sounding speech. All AI capabilities are powered entirely by the [Sunbird AI API](https://api.sunbird.ai) — no external model providers are used.
@@ -51,14 +39,15 @@ The app follows a linear pipeline orchestrated in `backend/pipeline.py`:
 
 ## Local Setup
 
-### 1. Clone the repository
+### 1. Fork the repo and clone your own version
+- Fork your own version of the repo
 
 ```bash
 git clone https://github.com/<your-username>/internship-assessment.git
 cd internship-assessment
 ```
 
-### 2. Create and activate a virtual environment
+### 2. Create and activate a virtual environment inside your folder
 
 ```bash
 python -m venv venv
@@ -90,7 +79,6 @@ SUNBIRD_API_TOKEN= YOUR_SUNBIRD_AI_API_TOKEN
 ```
 
 > **Get a token:** Sign up at [Sunbird AI API Portal](https://api.sunbird.ai/).
-> **Never commit your token to git.**
 
 ### 5. Run the app locally
 
@@ -177,15 +165,5 @@ git push space main
 ```
 
 Hugging Face will build and deploy automatically.
-
----
-
-## Known Limitations
-
-1. **TTS endpoint latency:** The Sunbird AI Text-to-Speech (`/tasks/tts`) endpoint occasionally experiences **server-side timeouts** (> 3 minutes). When this happens, the app surfaces the error to the user rather than hanging silently.
-2. **5-minute audio cap:** Audio uploads longer than 5 minutes are rejected client-side. The Sunbird API itself supports up to 10 minutes, but the app enforces a 5-minute limit per the brief.
-3. **Language coverage:** Translation and TTS support five Ugandan languages (Luganda, Runyankole, Ateso, Lugbara, Acholi). English input is supported via both text and STT, but English is not a translation target.
-4. **No conversation history:** Each request is stateless; the app does not remember previous interactions.
-5. **STT language detection:** The STT endpoint auto-detects language in the audio. The transcript may occasionally be returned in a language different from the user's expectation if the audio quality is poor.
 
 ---
