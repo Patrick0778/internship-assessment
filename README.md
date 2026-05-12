@@ -76,7 +76,7 @@ Edit `.env` and replace the placeholder with your actual Sunbird AI API token:
 
 ```bash
 # .env
-SUNBIRD_API_TOKEN=YOUR_SUNBIRD_AI_API_TOKEN
+SUNBIRD_API_TOKEN=<your-sunbird-api-token>
 ```
 
 > **Get a token:** Sign up at [Sunbird AI API Portal](https://api.sunbird.ai/).
